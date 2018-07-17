@@ -1,0 +1,53 @@
+<div class="board-inner" id="status-buttons">
+    <div class="card-header">
+        <h3 class="title">Build Your Profile</h3>
+        <h5 class="title2">This information will let us know more about you</h5>
+    </div>
+    <div class="pills">
+    <ul class="nav nav-pills" id="myTab">
+               
+        <!-- circular user icon -->
+        <li>
+            <a routerLink="/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
+                <span class="round-tabs one">
+                    <p (click)="Tab1()">about</p>
+                </span>
+            </a>
+        </li>
+
+        <!-- circular tasks icon -->
+         <li>
+            <a routerLink="/work" routerLinkActive="active" data-toggle="tab" title="work">
+                <span class="round-tabs two">
+                        <p (click)="Tab2()">account</p>
+                </span> 
+            </a>
+        </li>
+
+        <!-- circular home icon -->
+        <li>
+            <a routerLink="/address" routerLinkActive="active" data-toggle="tab" title="address">
+                <span class="round-tabs three">
+                        <p (click)="Tab3()">address</p>
+                </span>
+            </a>
+        </li>
+
+        <!-- circular ok icon -->
+        <!-- <li>
+            <a routerLink="/result" routerLinkActive="active" data-toggle="tab" title="completed">
+                <span class="round-tabs four">
+                    <p (click)="Tab4()">Finish</p>
+                </span>
+            </a>
+        </li> -->
+
+                <div class="moving-tab" style=" transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1);"> <p class="pill"></p> </div>
+                
+    </ul>
+</div>
+    <div class="clearfix"></div>
+</div>
+
+<!-- Close the Splash screen -->
+<!-- <script src="assets/js/loading-bars.js"></script> -->

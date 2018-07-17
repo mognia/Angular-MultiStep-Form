@@ -1,0 +1,51 @@
+<form #addressForm="ngForm">
+    <div class="row">
+        <div class="tab-pane ">
+            <div class="addresForm">
+                <div class="col-md-9 col-sm-12">
+                    <div class="form-group stName">
+                        <mat-form-field>
+                            <input matInput placeholder="Street Name">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Street NO">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <div class="form-group CityField">
+                        <mat-form-field>
+                            <input matInput placeholder="City">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+
+                    <mat-form-field>
+                        <mat-select placeholder="Select">
+                            <mat-option value="option1">Tehran</mat-option>
+                            <mat-option value="option2">London</mat-option>
+                            <mat-option value="option3">Paris</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <input class="btn btn-pre pull-left " name="pre" type="button" value="PREVIOUS" (click)="goToPre()">
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+
+                        <input class="btn btn-next pull-right " name="next" type="submit" value="" (click)="goToNext(addressForm)">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

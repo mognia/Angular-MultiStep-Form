@@ -1,0 +1,50 @@
+<form #workForm="ngForm" class="editForm" novalidate>
+    <div class="tab-pane ">
+        <h4 class="infoText">What are you doing? (checkboxes)</h4>
+        <br/>
+        <div class='row'>
+            <div class="col-md-4 col-sm-12">
+                <div class="choice">
+                    <input type="radio" #work="ngModel" class="worktype"  name="work" [(ngModel)]="workType" value="Design">
+                    <div class="icon">
+                        <i class="fa fa-pencil"></i>
+                        
+                    </div>
+                    <h6>DESIGN</h6>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                    <div class="choice">
+                            <input  type="radio" #work="ngModel"  name="work" [(ngModel)]="workType" value="Code">
+                            <div class="icon">
+                                <i class="fa fa-terminal"></i>
+                            </div>
+                            <h6>CODE</h6>
+                        </div>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                    <div class="choice">
+                            <input type="radio" #work="ngModel"  name="work" [(ngModel)]="workType" value="Deploy">
+                            <div class="icon">
+                                <i class="fa fa-laptop"></i>
+                                
+                            </div>
+                            <h6>DEVELOP</h6>
+                        </div>
+            </div>
+
+        <div class="card-footer">
+                <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                                <input class="btn btn-pre pull-left " name="pre" type="button" value="PREVIOUS" (click)="goToPre()" >
+                        </div>
+                    <div class="col-md-6 col-sm-6">
+    
+                            <input class="btn btn-next pull-right " name="next" type="submit" value="" [disabled]="!workForm.valid" (click)="goToNext(workForm)" >
+                    </div>
+    
+                </div>
+            </div>
+         </div>
+    </div>
+</form>

@@ -1,0 +1,70 @@
+<form #personalForm="ngForm" class="editForm" novalidate>
+        <div class="tab-pane ">
+                <h4 class="infoText">Let's start with the basic information (with validation)</h4>
+                <br/>
+                <div class='row'>
+                        <div class="col-md-6 col-sm-5">
+                                <div class="img-container">
+                                        <div class="img-avatar">
+                                                <img src="../../assets/images/default-avatar.png">
+                                                <input id="wizard-img" type="file">
+                                        </div>
+                                        <h6 class="description">Choose Picture</h6>
+                                </div>
+                        </div>
+                        <div class="col-md-6 col-sm-7">
+                                <div class="input-group ">
+                                        <div class="input-group-prepend form-group">
+                                                <span class="input-group-text">
+                                                        <i class="material-icons">face</i>
+                                                </span>
+                                                <mat-form-field>
+                                                        <input ngModel #firstname="ngModel" matInput placeholder="First Name" name="firstname" [(ngModel)]="personal.firstName" required>
+                                                        <mat-error *ngIf="!firstname.valid && firstname.touched ">First Name SHould be Valid!</mat-error>
+                                                </mat-form-field>
+
+                                        </div>
+
+                                </div>
+                                <div class="input-group">
+                                        <div class="input-group-prepend form-group">
+                                                <span class="input-group-text">
+                                                        <i class="material-icons">record_voice_over</i>
+                                                </span>
+                                                <mat-form-field>
+                                                        <input ngModel matInput placeholder="Last Name" name="lastname" #lastname="ngModel" [(ngModel)]="personal.lastName" required>
+                                                        <mat-error *ngIf="lastname.invalid && lastname.touched">Last Name Invaild!</mat-error>
+                                                </mat-form-field>
+                                        </div>
+                                </div>
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 ">
+                                <div class="input-group">
+                                        <div class="input-group-prepend email-input form-group">
+                                                <span class="input-group-text">
+                                                        <i class="material-icons">email</i>
+                                                </span>
+                                                <mat-form-field>
+                                                        <input ngModel #email="ngModel" matInput placeholder="Email" name="email" [(ngModel)]="personal.email" required>
+                                                        <mat-error *ngIf="email.invalid">Email is invalid</mat-error>
+                                                </mat-form-field>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="card-footer">
+                        <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                        <input class="btn btn-pre pull-left " name="pre" type="button" value="PREVIOUS">
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+
+                                        <input class="btn btn-next pull-right " name="next" type="submit" value="" [disabled]="!personalForm.valid" (click)="goToNext(personalForm)">
+                                </div>
+
+                        </div>
+                </div>
+        </div>
+</form>
