@@ -1,4 +1,4 @@
-import { Component, OnInit }   from '@angular/core';
+import { Component, OnInit,HostListener }   from '@angular/core';
 import { Router }              from '@angular/router';
 
 import { Personal }            from '../data/formData.model';
@@ -25,6 +25,10 @@ export class PersonalComponent implements OnInit {
     btnNext:string='NEXT';
     btnPre:any;
     pill = 'ABOUT'
+    @HostListener('window:resize', ['$event'])
+    sizeChange(event) {
+      this.sizeCheck();
+    }
     constructor(private router: Router, private formDataService: FormDataService) {
 
 

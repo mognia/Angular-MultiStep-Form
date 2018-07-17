@@ -4,31 +4,35 @@
         <br/>
         <div class='row'>
             <div class="col-md-4 col-sm-12">
-                <div class="choice">
-                    <input type="radio" #work="ngModel" class="worktype"  name="work" [(ngModel)]="workType" value="Design">
-                    <div class="icon">
+                <div class="choice form-group">
+
+                    <input type="radio" ngModel #work="ngModel" id="design" class="worktype"  name="work" [(ngModel)]="workType" value="Design" required>
+                    <label class="icon"  id="icon" for="design">
                         <i class="fa fa-pencil"></i>
                         
-                    </div>
+                        </label>
                     <h6>DESIGN</h6>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                    <div class="choice">
-                            <input  type="radio" #work="ngModel"  name="work" [(ngModel)]="workType" value="Code">
-                            <div class="icon">
+                    <div class="choice form-group">
+
+
+                            <input  type="radio" ngModel #work="ngModel"  id="code" name="work" [(ngModel)]="workType" value="Code" required>
+                            <label class="icon" id="icon" for="code">
                                 <i class="fa fa-terminal"></i>
-                            </div>
+                            </label>
                             <h6>CODE</h6>
                         </div>
             </div>
             <div class="col-md-4 col-sm-12">
-                    <div class="choice">
-                            <input type="radio" #work="ngModel"  name="work" [(ngModel)]="workType" value="Deploy">
-                            <div class="icon">
+                    <div class="choice form-group">
+
+                            <input type="radio" ngModel #work="ngModel" id="develop"  name="work" [(ngModel)]="workType" value="Deploy"required>
+                            <label class="icon"  id="icon" for="develop">
                                 <i class="fa fa-laptop"></i>
                                 
-                            </div>
+                            </label>
                             <h6>DEVELOP</h6>
                         </div>
             </div>
@@ -40,7 +44,7 @@
                         </div>
                     <div class="col-md-6 col-sm-6">
     
-                            <input class="btn btn-next pull-right " name="next" type="submit" value="" [disabled]="!workForm.valid" (click)="goToNext(workForm)" >
+                            <input class="btn btn-next pull-right " name="next" type="submit" value=""  (click)="goToNext(workForm)" >
                     </div>
     
                 </div>

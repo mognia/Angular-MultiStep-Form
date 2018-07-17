@@ -78,17 +78,21 @@
     }
 .choice {
       text-align: center;
-      cursor: pointer;
       margin: 0 0px 74px 0;
   }
-.choice:hover .icon {
+.icon:hover  {
     border-color: #e91e63;
     color: #e91e63;
+}
+input:checked+label{
+  border-color: #e91e63;
+  color: #e91e63;
 }
 .choice .icon {
     text-align: center;
     vertical-align: middle;
     height: 116px;
+    cursor: pointer;
     width: 116px;
     border-radius: 50%;
     color: #999;
@@ -105,11 +109,15 @@
   left: -10000px;
   z-index: 222;
 }
-.choice.active .icon,  .choice:hover .icon , .choice input[type=radio]:checked .icon{
+.choice input[type=radio]:checked +label{
   border-color: #e91e63;
   color: #e91e63;
 }
-.worktype:active .icon{
+.choice:checked .icon,  .choice:hover .icon , .choice input[type=radio]:checked .icon {
+  border-color: #e91e63;
+  color: #e91e63;
+}
+.workbox:checked .icon{
   border-color: #e91e63;
   color: #e91e63;
 }

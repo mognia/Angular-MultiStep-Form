@@ -1,4 +1,4 @@
-import { Component, OnInit }   from '@angular/core';
+import { Component, OnInit,HostListener }   from '@angular/core';
 import { Router }              from '@angular/router';
 
 import { FormDataService }     from '../data/formData.service';
@@ -16,7 +16,10 @@ export class WorkComponent implements OnInit {
     btnNextVal:any;
     btnNext:string='NEXT';
     pillTitle:any;
-
+    @HostListener('window:resize', ['$event'])
+    sizeChange(event) {
+      this.sizeCheck();
+    }
     constructor(private router: Router, private formDataService: FormDataService) {
         this.pillTitle=document.querySelector('.pill');
         this.pillTitle.innerHTML=this.pill;
@@ -66,6 +69,8 @@ export class WorkComponent implements OnInit {
     }
 
     goToNext(form: any) {
+        console.log(form);
+        
         if (this.save(form)) {
             // Navigate to the address page
             this.router.navigate(['/address']);

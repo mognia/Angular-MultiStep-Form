@@ -1,4 +1,4 @@
-import { Component, OnInit }   from '@angular/core';
+import { Component, OnInit,HostListener }   from '@angular/core';
 import { Router }              from '@angular/router';
 
 import { Address }             from '../data/formData.model';
@@ -20,6 +20,10 @@ export class AddressComponent implements OnInit {
     btnNext:string='FINISH';
     pillTitle:any;
     cities:Object;
+    @HostListener('window:resize', ['$event'])
+    sizeChange(event) {
+      this.sizeCheck();
+    }
     constructor(private router: Router, private formDataService: FormDataService) {
         this.pillTitle=document.querySelector('.pill');
         this.pillTitle.innerHTML=this.pill;
