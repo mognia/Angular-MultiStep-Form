@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
 
         if(this.DesktopSize.matches){
             this.movingTab.style.transform="";
-            this.movingTab.style.transform="translate3d(-3vw, 0px, 0px)";      
+            this.movingTab.style.transform="translate3d(-1vw, 0px, 0px)";      
         }
         else if(this.MobileSize.matches){
             this.movingTab.style.transform="";

@@ -3,52 +3,93 @@
         <h4 class="infoText">What are you doing? (checkboxes)</h4>
         <br/>
         <div class='row'>
-            <div class="col-md-4 col-sm-12">
-                <div class="choice form-group">
+            <div class="regForm">
+                <div class="col-md-12 col-sm-12">
+                    <div class="input-group ">
+                        <div class="input-group-prepend form-group ">
+                            <span class="input-group-text">
+                                <i class="material-icons">perm_identity</i>
+                            </span>
 
-                    <input type="radio" ngModel #work="ngModel" id="design" class="worktype"  name="work" [(ngModel)]="workType" value="Design" required>
-                    <label class="icon"  id="icon" for="design">
-                        <i class="fa fa-pencil"></i>
-                        
-                        </label>
-                    <h6>DESIGN</h6>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                    <div class="choice form-group">
+                            <mat-form-field>
+                                <input ngModel #username="ngModel" matInput placeholder="User Name" name="username" [(ngModel)]="Register.username" required>
+                                <mat-error *ngIf="!username.valid && username.touched ">First Name SHould be Valid!</mat-error>
+                            </mat-form-field>
 
 
-                            <input  type="radio" ngModel #work="ngModel"  id="code" name="work" [(ngModel)]="workType" value="Code" required>
-                            <label class="icon" id="icon" for="code">
-                                <i class="fa fa-terminal"></i>
-                            </label>
-                            <h6>CODE</h6>
                         </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                    <div class="choice form-group">
 
-                            <input type="radio" ngModel #work="ngModel" id="develop"  name="work" [(ngModel)]="workType" value="Deploy"required>
-                            <label class="icon"  id="icon" for="develop">
-                                <i class="fa fa-laptop"></i>
-                                
-                            </label>
-                            <h6>DEVELOP</h6>
-                        </div>
-            </div>
-
-        <div class="card-footer">
-                <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                                <input class="btn btn-pre pull-left " name="pre" type="button" value="PREVIOUS" (click)="goToPre()" >
-                        </div>
-                    <div class="col-md-6 col-sm-6">
-    
-                            <input class="btn btn-next pull-right " name="next" type="submit" value=""  (click)="goToNext(workForm)" >
                     </div>
-    
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="input-group ">
+                        <div class="input-group-prepend form-group PassInput">
+                            <span class="input-group-text">
+                                <i class="material-icons">lock</i>
+                            </span>
+                            <mat-form-field>
+                                <input ngModel #password="ngModel" (keyup)="checkStrength(password.value)" matInput placeholder="PassWord" class="pass" type="password" name="password" [(ngModel)]="Register.password"
+                                    required>
+                                <mat-error *ngIf="!password.valid && password.touched ">PassWord SHould be Valid!</mat-error>
+                            </mat-form-field>
+                            <mat-checkbox (click)='showPass()'>
+                                <i class="material-icons">remove_red_eye</i>
+                            </mat-checkbox>
+
+                        </div>
+                        <!-- Password Form: begins -->
+                        <div id="PasswordForm">
+
+
+
+                            <!-- Password Strength: begins -->
+                            <div id="password-strength" class="password-strength">
+                                    <div class="bar-text">{{passStatus}}</div>
+                                <!-- Strength Boxes: Box1 -->
+                                <div class="box box1">
+
+                                    <div class="bar"></div>
+                                </div>
+
+                                <!-- Strength Boxes: Box2 -->
+                                <div class="box box2">
+                                    <div class="bar"></div>
+                                </div>
+
+                                <!-- Strength Boxes: Box3 -->
+                                <div class="box box3">
+                                    <div class="bar"></div>
+                                </div>
+
+                                <!-- Strength Boxes: Box4 -->
+                                <div class="box box4">
+                                    <div class="bar"></div>
+                                </div>
+
+                            </div>
+                            <!-- Password Strength: ends -->
+
+                        </div>
+                        <!-- Password Form: ends -->
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <input class="btn btn-pre pull-left " name="pre" type="button" value="PREVIOUS" (click)="goToPre()">
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+
+                        <input class="btn btn-next pull-right " name="next" type="submit" value="" (click)="goToNext(workForm)">
+                    </div>
+
                 </div>
             </div>
-         </div>
+
+        </div>
     </div>
 </form>

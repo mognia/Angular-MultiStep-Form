@@ -76,78 +76,199 @@
   box-shadow: 0 14px 26px -12px rgba(153,153,153,.42), 0 4px 23px 0 rgba(0,0,0,.12), 0 8px 10px -5px rgba(153,153,153,.2);
 
     }
-.choice {
-      text-align: center;
-      margin: 0 0px 74px 0;
-  }
-.icon:hover  {
-    border-color: #e91e63;
-    color: #e91e63;
-}
-input:checked+label{
-  border-color: #e91e63;
-  color: #e91e63;
-}
-.choice .icon {
-    text-align: center;
-    vertical-align: middle;
-    height: 116px;
-    cursor: pointer;
-    width: 116px;
-    border-radius: 50%;
-    color: #999;
-    margin: 0 auto 20px;
-    border: 4px solid #ccc;
-    transition: all .2s;
-    -webkit-transition: all .2s;
-}
-.choice .icon .fa{
-  padding: 27px;
-}
-.choice input[type=checkbox], .choice input[type=radio] {
-  position: absolute;
-  left: -10000px;
-  z-index: 222;
-}
-.choice input[type=radio]:checked +label{
-  border-color: #e91e63;
-  color: #e91e63;
-}
-.choice:checked .icon,  .choice:hover .icon , .choice input[type=radio]:checked .icon {
-  border-color: #e91e63;
-  color: #e91e63;
-}
-.workbox:checked .icon{
-  border-color: #e91e63;
-  color: #e91e63;
-}
+
 .addresForm{
   padding: 41px;
   margin: 0 34px;
 }
+.regForm{
+  padding: 0 18px
+}
+.PassInput .mat-form-field-wrapper{
+  margin-right: 20px;
+}
+
+#PasswordForm {
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16em;
+  margin: -20px 0 32px 43px;
+}
+
+fieldset { 
+  border: 0px; 
+  margin: 0px; 
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+fieldset input { 
+  display: block;
+  width : 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  outline: none;
+  font-size : 15px;
+}
+
+#password-strength {
+   display: block;
+   position: relative;
+   font-size: 0px;
+   top : 11px;
+ }
+
+#PasswordForm .box {
+  position: relative;
+  width: 25%;
+  height: 25px;
+  display: inline-block;
+  background-color: #e4e4e4;
+  text-align: center;
+}
+
+.bar-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 10px;
+  z-index: 3;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+#PasswordForm .box div.bar {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  z-index: 2;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#PasswordForm .normal .box.box1 div.bar {
+  background: #FF0000;
+  width: 100%;
+}
+
+.box.box1,
+#PasswordForm .box.box1 div.bar{ border-radius : 5px 0px 0px 5px; }
+
+.box.box4,
+#PasswordForm .box.box4 div.bar{border-radius : 0px 5px 5px 0px;}
+
+#PasswordForm .normal .box.box1 div.bar-text,       
+#PasswordForm .medium .box.box1 div.bar-text,       
+#PasswordForm .strong .box.box1 div.bar-text,
+#PasswordForm .vstrong .box.box1 div.bar-text, {
+  color: #fff;
+}
+
+#PasswordForm .medium .box.box1 div.bar {
+  background: #E66C2C;
+  width: 100%;
+}
+
+#PasswordForm .medium .box.box2 div.bar {
+  background: #E66C2C;
+  width: 100%;
+}
+
+#PasswordForm .strong .box.box1 div.bar {
+  background: #2D98F3;
+  width: 100%;
+}
+
+#PasswordForm .strong .box.box2 div.bar {
+  background: #2D98F3;
+  width: 100%;
+}
+
+#PasswordForm .strong .box.box3 div.bar {
+  background: #2D98F3;
+  width: 100%;
+}
+
+#PasswordForm .vstrong .box.box1 div.bar {
+  background: #006400;
+  width: 100%;
+}
+
+#PasswordForm .vstrong .box.box2 div.bar {
+  background: #006400;
+  width: 100%;
+}
+
+#PasswordForm .vstrong .box.box3 div.bar {
+  background: #006400;
+  width: 100%;
+}
+
+#PasswordForm .vstrong .box.box4 div.bar {
+  background: #006400;
+  width: 100%;
+}
  /* Small devices (landscape phones, 576px and up) */
  @media (min-width: 576px) { 
-  .input-group {
-    margin: 0 0 0 17%;
-  }
-
+  .input-group-prepend .mat-form-field-wrapper {
+    position: relative;
+    width: 42em;
+}
+.PassInput .mat-form-field-wrapper{
+  width: 30em;
+}
+#PasswordForm{
+  width: 13em;
+    margin: 16px 0 32px 33px;
+}
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (max-width: 768px) { 
-  
+  .input-group-prepend .mat-form-field-wrapper {
+    position: relative;
+    width: 22em;
+}
+  #PasswordForm{
+    width: 8em;
+    margin: -36px 0 32px 37px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+  #PasswordForm{
+
+    width: 13em;
+    margin: -23px 0 64px 35px;
+  }
+  .PassInput .mat-form-field-wrapper{
+    width: 30em!important;
+  }
+.input-group-prepend .mat-form-field-wrapper {
+  position: relative;
+  width: 16em;
+}
+.regForm .mat-form-field-wrapper {
+  position: relative;
+  width: 42em;
+}
   .stName .mat-form-field-wrapper{
     width: 25em;
   }
   .CityField .mat-form-field-wrapper{
     width: 19em;
   }
-  .input-group {
-    margin: 0 ;
+  .regForm .input-group {
+    padding: 0 61px;
   }
    .email-input{
     margin-left: 8%;
@@ -158,3 +279,27 @@ input:checked+label{
   }
 
 }
+
+  @media (max-width: 400px) { 
+    .input-group-prepend .mat-form-field-wrapper {
+      position: relative;
+      width: 12em;
+  }
+
+  }
+
+  @media (min-width: 1024px) {
+    .nav-pills>li {
+      width: 165px;
+  }
+  .moving-tab {
+    width: 190px;
+    height: 47px;
+    margin-left: 27px;
+}
+.mat-form-field-underline {
+  position: absolute;
+  height: 1px;
+  width: 85%!important;
+}
+   }

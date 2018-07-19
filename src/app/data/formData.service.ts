@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, Personal, Address }       from './formData.model';
+import { FormData, Personal, Address,Register }       from './formData.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -35,17 +35,22 @@ export class FormDataService {
         this.workflowService.validateStep(STEPS.personal);
     }
 
-    getWork() : string {
+    getReg() :  Register {
         // Return the work type
-        return this.formData.work;
+        var register :Register={
+            username : this.formData.username,
+            password:this.formData.password
+        };
+        return register;
     }
     
-    setWork(data: string) {
+    setReg(data: Register) {
         // Update the work type only when the Work Form had been validated successfully
         this.isWorkFormValid = true;
-        this.formData.work = data;
+        this.formData.username = data.username;
+        this.formData.password = data.password;
         // Validate Work Step in Workflow
-        this.workflowService.validateStep(STEPS.work);
+        this.workflowService.validateStep(STEPS.register);
     }
 
     getAddress() : Address {

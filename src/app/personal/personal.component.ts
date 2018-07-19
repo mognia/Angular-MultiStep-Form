@@ -51,7 +51,7 @@ export class PersonalComponent implements OnInit {
 
         if(window.matchMedia('(min-width: 992px)').matches){
             this.movingTab.style.transform="";
-            this.movingTab.style.transform="translate3d(-3vw, 0px, 0px)";      
+            this.movingTab.style.transform="translate3d(-1vw, 0px, 0px)";      
         }
         else if(window.matchMedia('(min-width: 576px)').matches){
             this.movingTab.style.transform="";

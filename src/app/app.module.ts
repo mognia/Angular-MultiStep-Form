@@ -19,7 +19,7 @@ import { AppRoutingModule }   from './app-routing.module';
 import { FormDataService }    from './data/formData.service';
 import { WorkflowService }    from './workflow/workflow.service';
 
-import { MatButtonModule,MatFormFieldModule,MatInputModule,MatRippleModule,MatSelectModule } from "@angular/material";
+import { MatButtonModule,MatFormFieldModule,MatInputModule,MatRippleModule,MatSelectModule,MatCheckboxModule } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
@@ -33,7 +33,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
                     MatInputModule,
                     ReactiveFormsModule,
                     MatRippleModule,
-                    MatSelectModule
+                    MatSelectModule,
+                    MatCheckboxModule
                   ],
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService },
