@@ -10,7 +10,7 @@ import { NavbarComponent }    from './navbar/navbar.component';
 import { PersonalComponent }  from './personal/personal.component';
 import { WorkComponent }      from './work/work.component';
 import { AddressComponent }   from './address/address.component';
-import { ResultComponent }    from './result/result.component';
+
 
 /* Routing Module */
 import { AppRoutingModule }   from './app-routing.module';
@@ -39,7 +39,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     providers:    [{ provide: FormDataService, useClass: FormDataService },
                    { provide: WorkflowService, useClass: WorkflowService },
                     ],
-    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, AddressComponent, ResultComponent ],
+    declarations: [ AppComponent, NavbarComponent, PersonalComponent, WorkComponent, AddressComponent ],
     bootstrap:    [ AppComponent ]
 })
 
